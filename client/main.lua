@@ -69,12 +69,20 @@ RegisterNuiHandler('cam:point-at', function(payload)
     creator.camera:pointAt(payload)
 end, isActiveCheck)
 
-local function startCharacterCreator(config)
+local function startCharacterCreator(config, cb)
     if creator:isActive() then
         error('Already using character creator')
     end
 
-    creator:start(config)
+    creator:start(config, cb or function(identity, appearance)
+        print(json.encode({
+            identity = identity,
+            appearance = appearance
+        }, {
+            indent = true
+        }))
+        creator.appearance:set(appearance)
+    end)
 end
 
 RegisterKey({

@@ -34,17 +34,20 @@ function Creator.new()
     return self
 end
 
-function Creator:start(config)
+function Creator:start(config, callback)
     if self._isActive then
         return
     end
     config = config or {}
     loadImages()
+    self.callback = callback
 
     local ped = PlayerPedId()
+    self.initialAppearance = self.appearance:get(ped)
+
     SetEntityCoords(ped, INITIAL_POS)
     SetEntityHeading(ped, INITIAL_HEADING)
-    SetModel(MP_MODELS.male)
+    SetModel(MP_MODELS.female)
     ped = PlayerPedId()
     FreezeEntityPosition(ped, true)
     while not HasCollisionLoadedAroundEntity(ped) do
@@ -99,10 +102,14 @@ function Creator:stop(identity)
     print(json.encode(identity, {
         indent = true
     }))
-    self._isActive = false
     self._pauseCookie.isActive = false
     self.rotator:stop()
+    local ped = PlayerPedId()
 
+    local currentAppearance = self.appearance:get(ped)
+
+    self.appearance:set(self.initialAppearance)
+    self.initialAppearance = nil
     self.camera:setActive(false)
     self.camera:destroy()
     unloadImages()
@@ -111,10 +118,13 @@ function Creator:stop(identity)
     SendNUIMessage({
         eventName = "creator:stop"
     })
+    ped = PlayerPedId()
 
-    local ped = PlayerPedId()
     FreezeEntityPosition(ped, false)
     SetPlayerControl(PlayerId(), true, 0)
+    self.callback(identity, currentAppearance)
+    self.callback = nil
+    self._isActive = false
 end
 
 function Creator:isActive()

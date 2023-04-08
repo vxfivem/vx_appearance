@@ -50,7 +50,7 @@ function SetPedDefaultAppearance(ped)
         SetPedComponentVariation(ped, 9, 0, 0, 0)
         SetPedComponentVariation(ped, 10, 0, 0, 0)
         SetPedComponentVariation(ped, 11, 15, 0, 0)
-    else
+    elseif model == MP_MODELS.female then
         SetPedComponentVariation(ped, 1, 0, 0, 0)
         SetPedComponentVariation(ped, 2, 0, 0, 0)
         SetPedComponentVariation(ped, 3, 15, 0, 0)
@@ -93,7 +93,7 @@ function Appearance:setGender(gender)
     if not model then
         error(string.format('invalid gender %s', gender))
     end
-    SetModel(model)
+    SetModel(model, true)
     SetPedDefaultAppearance(PlayerPedId())
 end
 
@@ -179,7 +179,7 @@ end
 
 function Appearance:getFaceFeaturesUI(ped)
     return table.fromLength(20, function(i)
-        local ff = GetPedFaceFeature(ped, i)
+        local ff = GetPedFaceFeature(ped, i - 1)
         return math.floor(ff * 100)
     end)
 end
@@ -216,4 +216,89 @@ end
 function Appearance:setPedHairColor(ped, primary, secondary)
     SetPedHairColor(ped, primary, secondary)
     exp:applyHeadOverlay(ped)
+end
+
+function Appearance:get(ped)
+    ped = ped or PlayerPedId()
+    local model = GetEntityModel(ped)
+    local headbelnd = Appearance.getHeadblend(ped)
+    local faceFeatures = table.fromLength(20, function(i)
+        return {
+            index = i - 1,
+            value = GetPedFaceFeature(ped, i - 1)
+        }
+    end)
+    local headOverlays = table.fromLength(13, function(i)
+        local retval, overlayValue, colourType, firstColour, secondColour, overlayOpacity = GetPedHeadOverlayData(ped,
+            i - 1)
+        local color = ({firstColour, secondColour})[colourType]
+
+        return {
+            index = i,
+            value = overlayValue,
+            opacity = overlayOpacity,
+            color = color
+        }
+    end)
+    local hair = {
+        primaryColor = GetPedHairColor(ped),
+        secondaryColor = GetPedHairHighlightColor(ped),
+        variation = GetPedDrawableVariation(ped, 2)
+    }
+
+    local eyeColor = GetPedEyeColor(ped)
+    local clothes = table.fromLength(12, function(i)
+        i = i - 1
+        return {
+            index = i,
+            variation = GetPedDrawableVariation(ped, i),
+            texture = GetPedTextureVariation(ped, i),
+            palette = GetPedPaletteVariation(ped, i)
+        }
+    end)
+    local propIndexes = {0, 1, 2, 6, 7}
+    local props = {}
+    for i, v in ipairs(propIndexes) do
+        table.insert(props, {
+            index = v,
+            variation = GetPedPropIndex(ped, v),
+            texture = GetPedPropTextureIndex(ped, v),
+            isAttached = false
+        })
+    end
+
+    return {
+        model = model,
+        headbelnd = headbelnd,
+        faceFeatures = faceFeatures,
+        headOverlays = headOverlays,
+        hair = hair,
+        eyeColor = eyeColor,
+        clothes = clothes,
+        props = props
+    }
+end
+
+function Appearance:set(appearance)
+    SetModel(appearance.model, false)
+    local ped = PlayerPedId()
+    SetPedHeadBlendData(ped, table.unpack(appearance.headbelnd))
+    for k, v in pairs(appearance.faceFeatures) do
+        SetPedFaceFeature(ped, v.index, v.value)
+    end
+    for k, v in pairs(appearance.headOverlays) do
+        SetPedHeadOverlay(ped, v.index, v.value, v.opacity)
+        local colorType = colorTypes[v.index] or 0
+        SetPedHeadOverlayColor(ped, v.index, colorType, v.color, v.color)
+    end
+    SetPedComponentVariation(ped, 2, appearance.hair.variation, 0, 0)
+    SetPedHairColor(ped, appearance.hair.primaryColor, appearance.hair.secondaryColor)
+    exp:applyHeadOverlay(ped)
+    SetPedEyeColor(ped, appearance.eyeColor)
+    for k, v in pairs(appearance.clothes) do
+        SetPedComponentVariation(ped, v.index, v.variation, v.texture, v.palette)
+    end
+    for k, v in pairs(appearance.props) do
+        SetPedPropIndex(ped, v.index, v.variation, v.texture, v.isAttached)
+    end
 end

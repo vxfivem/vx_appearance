@@ -33,7 +33,8 @@ MP_MODELS = {
     female = GetHashKey('mp_f_freemode_01')
 }
 
-function SetModel(model)
+function SetModel(model, setDefault)
+    setDefault = setDefault == nil and true or setDefault
     if not IsModelValid(model) then
         print("Invalid model specified.")
         return false
@@ -46,7 +47,9 @@ function SetModel(model)
     SetPlayerModel(PlayerId(), model)
     SetModelAsNoLongerNeeded(model)
     local ped = PlayerPedId()
-    SetPedDefaultAppearance(ped)
+    if setDefault then
+        SetPedDefaultAppearance(ped)
+    end
     return true
 end
 
@@ -82,6 +85,17 @@ function table.fromLength(legth, fill)
     local ret = {}
     for i = 1, legth, 1 do
         table.insert(ret, fill(i))
+    end
+    return ret
+end
+
+function table.filter(self, cb)
+    local ret = {}
+
+    for i, v in ipairs(self) do
+        if cb(v, i) then
+            table.insert(ret, v)
+        end
     end
     return ret
 end
