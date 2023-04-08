@@ -234,7 +234,7 @@ function Appearance:get(ped)
         local color = ({firstColour, secondColour})[colourType]
 
         return {
-            index = i,
+            index = i - 1,
             value = overlayValue,
             opacity = overlayOpacity,
             color = color
