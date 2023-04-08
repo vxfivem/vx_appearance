@@ -15,7 +15,6 @@ end
 local function unloadImages()
     SetStreamedTextureDictAsNoLongerNeeded('pause_menu_pages_char_mom_dad')
     SetStreamedTextureDictAsNoLongerNeeded('char_creator_portraits')
-
 end
 
 Creator = {}

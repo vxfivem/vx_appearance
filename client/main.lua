@@ -89,18 +89,4 @@ local function startCharacterCreator(config, cb)
     end)
 end
 
-RegisterKey({
-    keyname = 'i',
-    layout = 'keyboard',
-    description = 'Enter char creator',
-    onRelease = function()
-        startCharacterCreator({
-            allowExit = false
-        })
-    end
-})
-
-RegisterCommand('head', function()
-    local ped = PlayerPedId()
-    print(GetEntityHeading(ped))
-end, false)
+exports('startCharacterCreator', startCharacterCreator)
