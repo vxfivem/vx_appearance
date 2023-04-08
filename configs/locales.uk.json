@@ -1,0 +1,184 @@
+{
+    "controls": {
+        "done": "Готово",
+        "reset": "Скинути",
+        "exit": "Вийти"
+    },
+    "submit": {
+        "firstname": "Ім'я",
+        "lastname": "Прізвище",
+        "dateOfBirth": "Дата народження",
+        "confirm": "Підтвердити",
+        "abort": "Скасувати"
+    },
+    "helpers": {
+        "rotate": "Обертати персонажа"
+    },
+    "pages": {
+        "inheritance": {
+            "title": "Наслідування",
+            "gender": {
+                "title": "Виберіть стать",
+                "male": "Чоловіча",
+                "female": "Жіноча"
+            },
+            "headblend": {
+                "titles": {
+                    "mother": "Мати",
+                    "father": "Батько",
+                    "ancestor": "Предок",
+                    "resemblance": "Подібність",
+                    "skinMix": "Суміш шкіри",
+                    "ancestorInfluence": "Вплив предка"
+                }
+            }
+        },
+        "faceFeatures": {
+            "title": "Особливості обличчя",
+            "sections": {
+                "nose": {
+                    "title": "Ніс",
+                    "width": {
+                        "label": "Ширина",
+                        "secondaryLabel": "Тонкий / Широкий"
+                    },
+                    "peak": {
+                        "label": "Вершина",
+                        "secondaryLabel": "Вгору / Вниз"
+                    },
+                    "length": {
+                        "label": "Довжина",
+                        "secondaryLabel": "Довгий / Короткий"
+                    },
+                    "boneCurviness": {
+                        "label": "Перенісся",
+                        "secondaryLabel": "Криве / Закруглене"
+                    },
+                    "tip": {
+                        "label": "Кінчик",
+                        "secondaryLabel": "Вгору / Вниз"
+                    },
+                    "boneTwist": {
+                        "label": "Перенісся",
+                        "secondaryLabel": "Ліворуч / Праворуч"
+                    }
+                },
+                "eyebrows": {
+                    "title": "Брови",
+                    "vertical": {
+                        "label": "Вертикальне положення",
+                        "secondaryLabel": "Вгору / Вниз"
+                    },
+                    "horizontal": {
+                        "label": "Горизонтальне положення",
+                        "secondaryLabel": "До / Від"
+                    }
+                },
+                "cheekBones": {
+                    "title": "Скули",
+                    "vertical": {
+                        "label": "Вертикальне положення",
+                        "secondaryLabel": "Вгору / Вниз"
+                    },
+                    "horizontal": {
+                        "label": "Горизонтальне положення",
+                        "secondaryLabel": "До / Від"
+                    },
+                    "width": {
+                        "label": "Ширина",
+                        "secondaryLabel": "Набряклі / Виснажені"
+                    }
+                },
+                "eyes": {
+                    "title": "Очі",
+                    "shape": {
+                        "label": "Форма",
+                        "secondaryLabel": "Широкі / Зморшені"
+                    }
+                },
+                "lips": {
+                    "title": "Губи",
+                    "thickness": {
+                        "label": "Товщина",
+                        "secondaryLabel": "Товсті / Тонкі"
+                    }
+                },
+                "jawBone": {
+                    "title": "Щелепа",
+                    "width": {
+                        "label": "Ширина",
+                        "secondaryLabel": "Вузька / Широка"
+                    },
+                    "shape": {
+                        "label": "Форма",
+                        "secondaryLabel": "Кругла / Квадратна"
+                    }
+                },
+                "chinBone": {
+                    "title": "Підборідок",
+                    "vertical": {
+                        "label": "Вертикальне положення",
+                        "secondaryLabel": "Вгору / Донизу"
+                    },
+                    "length": {
+                        "label": "Довжина",
+                        "secondaryLabel": "Довгий / Короткий"
+                    },
+                    "shape": {
+                        "label": "Форма",
+                        "secondaryLabel": "Заокруглена / Квадратна"
+                    }
+                },
+                "chinHole": {
+                    "title": "Отвір підборіддя",
+                    "bum": {
+                        "label": "Отвір",
+                        "secondaryLabel": "Є / Немає"
+                    }
+                },
+                "neck": {
+                    "title": "Шия",
+                    "thickness": {
+                        "label": "Товщина",
+                        "secondaryLabel": "Тонка / Товста"
+                    }
+                }
+            }
+        },
+        "appearance": {
+            "title": "Зовнішність",
+            "sections": {
+                "eyeColor": "Колір очей",
+                "face": {
+                    "title": "Обличчя",
+                    "blemishes": "Вади шкіри",
+                    "facialHair": "Вуса та борода",
+                    "eyebrows": "Брови",
+                    "ageing": "Старіння",
+                    "makeup": "Макіяж",
+                    "blush": "Рум'яна",
+                    "complexion": "Тон шкіри",
+                    "sunDamage": "Ушкодження від сонця",
+                    "lipstick": "Губна помада",
+                    "freckles": "Веснянки"
+                },
+                "body": {
+                    "title": "Тіло",
+                    "chestHair": "Волосся на грудях",
+                    "bodyBlemishes": "Вади на тілі",
+                    "additionalBodyBlemishes": "Додаткові вади на тілі"
+                }
+            },
+            "common": {
+                "opacity": "Прозорість",
+                "color": "Колір"
+            }
+        },
+        "hair": {
+            "title": "Волосся",
+            "variation": "Зачіска",
+            "primaryColor": "Основний колір",
+            "secondaryColor": "Додадковий колір"
+        }
+    }
+}

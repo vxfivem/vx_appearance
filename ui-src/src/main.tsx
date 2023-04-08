@@ -13,28 +13,29 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { gameConfig } from './config';
+import { gameEmitter } from './hooks/game';
 /// <reference types="vite-plugin-svgr/client" />
 
 Promise.all([
-  fetch(`https://cfx-nui-${GetParentResourceName()}/configs/eyes.json`).then((r) => r.json()),
   fetch(`https://cfx-nui-${GetParentResourceName()}/configs/parents.json`).then((r) => r.json()),
-  i18n
-    .use(Backend)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-      fallbackLng: 'en',
-      debug: false,
-      interpolation: {
-        escapeValue: false, // not needed for react as it escapes by default
-      },
-      backend: {
-        loadPath: `https://cfx-nui-${GetParentResourceName()}/configs/locales.json`,
-      },
-    }),
+  gameEmitter.emitAsync<undefined, string>('get-locale').then((locale) => {
+    return i18n
+      .use(Backend)
+      .use(LanguageDetector)
+      .use(initReactI18next)
+      .init({
+        fallbackLng: 'en',
+        debug: false,
+        interpolation: {
+          escapeValue: false, // not needed for react as it escapes by default
+        },
+        backend: {
+          loadPath: `https://cfx-nui-${GetParentResourceName()}/configs/locales.${locale}.json`,
+        },
+      });
+  }),
 ])
-  .then(([eyes, parents]) => {
-    gameConfig.eyes = eyes;
+  .then(([parents]) => {
     gameConfig.fathers = parents.fathers;
     gameConfig.mothers = parents.mothers;
   })

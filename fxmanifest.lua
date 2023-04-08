@@ -17,5 +17,7 @@ client_script 'client/rotator.lua'
 client_script 'client/creator.lua'
 client_script 'client/main.lua'
 
+locale 'uk'
+
 client_script 'utils/fill-hair-overlays.js'
 

@@ -69,6 +69,10 @@ RegisterNuiHandler('cam:point-at', function(payload)
     creator.camera:pointAt(payload)
 end, isActiveCheck)
 
+RegisterNUICallback('get-locale', function(data, cb)
+    cb(GetResourceMetadata(GetCurrentResourceName(), 'locale', 0) or 'en')
+end)
+
 local function startCharacterCreator(config, cb)
     if creator:isActive() then
         error('Already using character creator')
