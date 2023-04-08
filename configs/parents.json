@@ -1,0 +1,236 @@
+{
+  "fathers": [
+    {
+      "index": 0,
+      "portrait": "https://nui-img/char_creator_portraits/male_0",
+      "name": "Benjamin"
+    },
+    {
+      "index": 1,
+      "portrait": "https://nui-img/char_creator_portraits/male_1",
+      "name": "Daniel"
+    },
+    {
+      "index": 2,
+      "portrait": "https://nui-img/char_creator_portraits/male_2",
+      "name": "Joshua"
+    },
+    {
+      "index": 3,
+      "portrait": "https://nui-img/char_creator_portraits/male_3",
+      "name": "Noah"
+    },
+    {
+      "index": 4,
+      "portrait": "https://nui-img/char_creator_portraits/male_4",
+      "name": "Andrew"
+    },
+    {
+      "index": 5,
+      "portrait": "https://nui-img/char_creator_portraits/male_5",
+      "name": "Juan"
+    },
+    {
+      "index": 6,
+      "portrait": "https://nui-img/char_creator_portraits/male_6",
+      "name": "Alex"
+    },
+    {
+      "index": 7,
+      "portrait": "https://nui-img/char_creator_portraits/male_7",
+      "name": "Isaac"
+    },
+    {
+      "index": 8,
+      "portrait": "https://nui-img/char_creator_portraits/male_8",
+      "name": "Evan"
+    },
+    {
+      "index": 9,
+      "portrait": "https://nui-img/char_creator_portraits/male_9",
+      "name": "Ethan"
+    },
+    {
+      "index": 10,
+      "portrait": "https://nui-img/char_creator_portraits/male_10",
+      "name": "Vincent"
+    },
+    {
+      "index": 11,
+      "portrait": "https://nui-img/char_creator_portraits/male_11",
+      "name": "Angel"
+    },
+    {
+      "index": 12,
+      "portrait": "https://nui-img/char_creator_portraits/male_12",
+      "name": "Diego"
+    },
+    {
+      "index": 13,
+      "portrait": "https://nui-img/char_creator_portraits/male_13",
+      "name": "Adrian"
+    },
+    {
+      "index": 14,
+      "portrait": "https://nui-img/char_creator_portraits/male_14",
+      "name": "Gabriel"
+    },
+    {
+      "index": 15,
+      "portrait": "https://nui-img/char_creator_portraits/male_15",
+      "name": "Michael"
+    },
+    {
+      "index": 16,
+      "portrait": "https://nui-img/char_creator_portraits/male_16",
+      "name": "Santiago"
+    },
+    {
+      "index": 17,
+      "portrait": "https://nui-img/char_creator_portraits/male_17",
+      "name": "Kevin"
+    },
+    {
+      "index": 18,
+      "portrait": "https://nui-img/char_creator_portraits/male_18",
+      "name": "Louis"
+    },
+    {
+      "index": 19,
+      "portrait": "https://nui-img/char_creator_portraits/male_19",
+      "name": "Samuel"
+    },
+    {
+      "index": 20,
+      "portrait": "https://nui-img/char_creator_portraits/male_20",
+      "name": "Anthony"
+    },
+    {
+      "index": 42,
+      "portrait": "https://nui-img/char_creator_portraits/special_male_0",
+      "name": "Claude"
+    },
+    {
+      "index": 43,
+      "portrait": "https://nui-img/char_creator_portraits/special_male_1",
+      "name": "Niko"
+    },
+    {
+      "index": 44,
+      "portrait": "https://nui-img/char_creator_portraits/special_male_2",
+      "name": "John"
+    }
+  ],
+  "mothers": [
+    {
+      "index": 21,
+      "portrait": "https://nui-img/char_creator_portraits/female_0",
+      "name": "Hannah"
+    },
+    {
+      "index": 22,
+      "portrait": "https://nui-img/char_creator_portraits/female_1",
+      "name": "Audrey"
+    },
+    {
+      "index": 23,
+      "portrait": "https://nui-img/char_creator_portraits/female_2",
+      "name": "Jasmine"
+    },
+    {
+      "index": 24,
+      "portrait": "https://nui-img/char_creator_portraits/female_3",
+      "name": "Gisele"
+    },
+    {
+      "index": 25,
+      "portrait": "https://nui-img/char_creator_portraits/female_4",
+      "name": "Amelia"
+    },
+    {
+      "index": 26,
+      "portrait": "https://nui-img/char_creator_portraits/female_5",
+      "name": "Isabella"
+    },
+    {
+      "index": 27,
+      "portrait": "https://nui-img/char_creator_portraits/female_6",
+      "name": "Zoe"
+    },
+    {
+      "index": 28,
+      "portrait": "https://nui-img/char_creator_portraits/female_7",
+      "name": "Ava"
+    },
+    {
+      "index": 29,
+      "portrait": "https://nui-img/char_creator_portraits/female_8",
+      "name": "Camila"
+    },
+    {
+      "index": 30,
+      "portrait": "https://nui-img/char_creator_portraits/female_9",
+      "name": "Violet"
+    },
+    {
+      "index": 31,
+      "portrait": "https://nui-img/char_creator_portraits/female_10",
+      "name": "Sophia"
+    },
+    {
+      "index": 32,
+      "portrait": "https://nui-img/char_creator_portraits/female_11",
+      "name": "Evelyn"
+    },
+    {
+      "index": 33,
+      "portrait": "https://nui-img/char_creator_portraits/female_12",
+      "name": "Nicole"
+    },
+    {
+      "index": 34,
+      "portrait": "https://nui-img/char_creator_portraits/female_13",
+      "name": "Ashley"
+    },
+    {
+      "index": 35,
+      "portrait": "https://nui-img/char_creator_portraits/female_14",
+      "name": "Grace"
+    },
+    {
+      "index": 36,
+      "portrait": "https://nui-img/char_creator_portraits/female_15",
+      "name": "Brianna"
+    },
+    {
+      "index": 37,
+      "portrait": "https://nui-img/char_creator_portraits/female_16",
+      "name": "Natalie"
+    },
+    {
+      "index": 38,
+      "portrait": "https://nui-img/char_creator_portraits/female_17",
+      "name": "Olivia"
+    },
+    {
+      "index": 39,
+      "portrait": "https://nui-img/char_creator_portraits/female_18",
+      "name": "Elizabeth"
+    },
+    {
+      "index": 40,
+      "portrait": "https://nui-img/char_creator_portraits/female_19",
+      "name": "Charlotte"
+    },
+    {
+      "index": 41,
+      "portrait": "https://nui-img/char_creator_portraits/female_20",
+      "name": "Emma"
+    },
+    {
+      "index": 45,
+      "portrait": "https://nui-img/char_creator_portraits/special_female_0",
+      "name": "Misty"
+    }
+  ]
+}

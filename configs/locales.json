@@ -1,0 +1,184 @@
+{
+    "controls": {
+        "done": "Done",
+        "reset": "Reset",
+        "exit": "Exit"
+    },
+    "submit": {
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "dateOfBirth": "Date of birth",
+        "confirm": "Confirm",
+        "abort": "Abort"
+    },
+    "helpers": {
+        "rotate": "Rotate character"
+    },
+    "pages": {
+        "inheritance": {
+            "title": "Inheritance",
+            "gender": {
+                "title": "Select gender",
+                "male": "Male",
+                "female": "Female"
+            },
+            "headblend": {
+                "titles": {
+                    "mother": "First parent",
+                    "father": "Second parent",
+                    "ancestor": "Ancestor",
+                    "resemblance": "Resemblance",
+                    "skinMix": "Skin mix",
+                    "ancestorInfluence": "Ancestor's influence"
+                }
+            }
+        },
+        "faceFeatures": {
+            "title": "Face Features",
+            "sections": {
+                "nose": {
+                    "title": "Nose",
+                    "width": {
+                        "label": "Width",
+                        "secondaryLabel": "Thin / Wide"
+                    },
+                    "peak": {
+                        "label": "Peak",
+                        "secondaryLabel": "Up / Down"
+                    },
+                    "length": {
+                        "label": "Length",
+                        "secondaryLabel": "Long / Short"
+                    },
+                    "boneCurviness": {
+                        "label": "Bone curviness",
+                        "secondaryLabel": "Crooked / Curved"
+                    },
+                    "tip": {
+                        "label": "Tip",
+                        "secondaryLabel": "Up / Down"
+                    },
+                    "boneTwist": {
+                        "label": "Bone twist",
+                        "secondaryLabel": "Left/Right"
+                    }
+                },
+                "eyebrows": {
+                    "title": "Eyebrows",
+                    "vertical": {
+                        "label": "Vertical position",
+                        "secondaryLabel": "Up / Down"
+                    },
+                    "horizontal": {
+                        "label": "Horizontal position",
+                        "secondaryLabel": "In / Out"
+                    }
+                },
+                "cheekBones": {
+                    "title": "Cheek Bones",
+                    "vertical": {
+                        "label": "Vertical position",
+                        "secondaryLabel": "Up / Down"
+                    },
+                    "horizontal": {
+                        "label": "Horizontal position",
+                        "secondaryLabel": "In / Out"
+                    },
+                    "width": {
+                        "label": "Width",
+                        "secondaryLabel": "Puffed / Gaunt"
+                    }
+                },
+                "eyes": {
+                    "title": "Eyes",
+                    "shape": {
+                        "label": "Shape",
+                        "secondaryLabel": "Wide / Squinted"
+                    }
+                },
+                "lips": {
+                    "title": "Lips",
+                    "thickness": {
+                        "label": "Thickness",
+                        "secondaryLabel": "Fat / Thin"
+                    }
+                },
+                "jawBone": {
+                    "title": "Jaw bone",
+                    "width": {
+                        "label": "Width",
+                        "secondaryLabel": "Narrow / Wide"
+                    },
+                    "shape": {
+                        "label": "Shape",
+                        "secondaryLabel": "Round / Square"
+                    }
+                },
+                "chinBone": {
+                    "title": "Chin bone",
+                    "vertical": {
+                        "label": "Vertical position",
+                        "secondaryLabel": "Up / Down"
+                    },
+                    "length": {
+                        "label": "Length",
+                        "secondaryLabel": "In / Out"
+                    },
+                    "shape": {
+                        "label": "Shape",
+                        "secondaryLabel": "Pointed / Square"
+                    }
+                },
+                "chinHole": {
+                    "title": "Chin hole",
+                    "bum": {
+                        "label": "Chin bum",
+                        "secondaryLabel": ""
+                    }
+                },
+                "neck": {
+                    "title": "Neck",
+                    "thickness": {
+                        "label": "Thickness",
+                        "secondaryLabel": "Thin / Thick"
+                    }
+                }
+            }
+        },
+        "appearance": {
+            "title": "Appearance",
+            "sections": {
+                "eyeColor": "Eye color",
+                "face": {
+                    "title": "Face",
+                    "blemishes": "Blemishes",
+                    "facialHair": "Facial hair",
+                    "eyebrows": "Eyebrows",
+                    "ageing": "Ageing",
+                    "makeup": "Makeup",
+                    "blush": "Blush",
+                    "complexion": "Complexion",
+                    "sunDamage": "Sun damage",
+                    "lipstick": "Lipstick",
+                    "freckles": "Freckles"
+                },
+                "body": {
+                    "title": "Body",
+                    "chestHair": "Chest hair",
+                    "bodyBlemishes": "Body blemishes",
+                    "additionalBodyBlemishes": "Additional body blemishes"
+                }
+            },
+            "common": {
+                "opacity": "Opacity",
+                "color": "Color"
+            }
+        },
+        "hair": {
+            "title": "Hair",
+            "variation": "Hair style",
+            "primaryColor": "Primary color",
+            "secondaryColor": "Hightlight color"
+        }
+    }
+}
