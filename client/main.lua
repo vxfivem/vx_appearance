@@ -78,15 +78,13 @@ local function startCharacterCreator(config, cb)
         error('Already using character creator')
     end
 
-    creator:start(config, cb or function(identity, appearance)
-        print(json.encode({
-            identity = identity,
-            appearance = appearance
-        }, {
-            indent = true
-        }))
-        creator.appearance:set(appearance)
-    end)
+    creator:start(config, cb)
+end
+
+local function setAppearance(data)
+    creator.appearance:set(data)
 end
 
 exports('startCharacterCreator', startCharacterCreator)
+exports('setAppearance', setAppearance)
+

@@ -80,11 +80,13 @@ end
 
 function Appearance.getHeadblend(ped)
     ped = ped or PlayerPedId()
-    local hb = {Citizen.InvokeNative(0x2746BD9D88C5C5D0, ped, Citizen.PointerValueIntInitialized(0),
-        Citizen.PointerValueIntInitialized(0), Citizen.PointerValueIntInitialized(0),
-        Citizen.PointerValueIntInitialized(0), Citizen.PointerValueIntInitialized(0),
-        Citizen.PointerValueIntInitialized(0), Citizen.PointerValueFloatInitialized(0),
-        Citizen.PointerValueFloatInitialized(0), Citizen.PointerValueFloatInitialized(0))}
+    local hb = {
+        Citizen.InvokeNative(0x2746BD9D88C5C5D0, ped, Citizen.PointerValueIntInitialized(0),
+            Citizen.PointerValueIntInitialized(0), Citizen.PointerValueIntInitialized(0),
+            Citizen.PointerValueIntInitialized(0), Citizen.PointerValueIntInitialized(0),
+            Citizen.PointerValueIntInitialized(0), Citizen.PointerValueFloatInitialized(0),
+            Citizen.PointerValueFloatInitialized(0), Citizen.PointerValueFloatInitialized(0))
+    }
     return hb;
 end
 
@@ -161,7 +163,10 @@ function Appearance:getUiConfig()
         appearance = table.fromLength(13, function(i)
             local retval, overlayValue, colourType, firstColour, secondColour, overlayOpacity = GetPedHeadOverlayData(
                 ped, i - 1)
-            local color = ({firstColour, secondColour})[colourType]
+            local color = ({
+                firstColour,
+                secondColour
+            })[colourType]
             return {
                 color = color,
                 opacity = math.floor(overlayOpacity * 100),
@@ -221,7 +226,7 @@ end
 function Appearance:get(ped)
     ped = ped or PlayerPedId()
     local model = GetEntityModel(ped)
-    local headbelnd = Appearance.getHeadblend(ped)
+    local headblend = Appearance.getHeadblend(ped)
     local faceFeatures = table.fromLength(20, function(i)
         return {
             index = i - 1,
@@ -231,7 +236,10 @@ function Appearance:get(ped)
     local headOverlays = table.fromLength(13, function(i)
         local retval, overlayValue, colourType, firstColour, secondColour, overlayOpacity = GetPedHeadOverlayData(ped,
             i - 1)
-        local color = ({firstColour, secondColour})[colourType]
+        local color = ({
+            firstColour,
+            secondColour
+        })[colourType]
 
         return {
             index = i - 1,
@@ -256,7 +264,13 @@ function Appearance:get(ped)
             palette = GetPedPaletteVariation(ped, i)
         }
     end)
-    local propIndexes = {0, 1, 2, 6, 7}
+    local propIndexes = {
+        0,
+        1,
+        2,
+        6,
+        7
+    }
     local props = {}
     for i, v in ipairs(propIndexes) do
         table.insert(props, {
@@ -269,7 +283,7 @@ function Appearance:get(ped)
 
     return {
         model = model,
-        headbelnd = headbelnd,
+        headblend = headblend,
         faceFeatures = faceFeatures,
         headOverlays = headOverlays,
         hair = hair,
@@ -280,9 +294,10 @@ function Appearance:get(ped)
 end
 
 function Appearance:set(appearance)
+
     SetModel(appearance.model, false)
     local ped = PlayerPedId()
-    SetPedHeadBlendData(ped, table.unpack(appearance.headbelnd))
+    SetPedHeadBlendData(ped, table.unpack(appearance.headblend))
     for k, v in pairs(appearance.faceFeatures) do
         SetPedFaceFeature(ped, v.index, v.value)
     end

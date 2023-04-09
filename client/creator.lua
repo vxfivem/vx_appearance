@@ -38,18 +38,22 @@ function Creator:start(config, callback)
         return
     end
     config = config or {}
+    DoScreenFadeOut(0)
+    Wait(1000)
+
     loadImages()
     self.callback = callback
 
     local ped = PlayerPedId()
     self.initialAppearance = self.appearance:get(ped)
 
-    SetEntityCoords(ped, INITIAL_POS)
-    SetEntityHeading(ped, INITIAL_HEADING)
     SetModel(MP_MODELS.female)
     ped = PlayerPedId()
+    SetEntityCoords(ped, INITIAL_POS)
+    SetEntityHeading(ped, INITIAL_HEADING)
     FreezeEntityPosition(ped, true)
-    while not HasCollisionLoadedAroundEntity(ped) do
+    local interior = GetInteriorAtCoords(GetEntityCoords(ped))
+    while not HasCollisionLoadedAroundEntity(ped) and not IsInteriorReady(interior) do
         Wait(0)
     end
     SetPlayerControl(PlayerId(), false, 0)
@@ -81,16 +85,21 @@ function Creator:start(config, callback)
             Wait(100)
         end
     end)
-
+    DoScreenFadeIn(5000)
+    Wait(500)
     SendNUIMessage({
         eventName = "creator:start",
         payload = table.merge({
             config = table.merge(config, {
                 hairColors = table.fromLength(GetNumHairColors(), function(i)
-                    return {GetPedHairRgbColor(i - 1)}
+                    return {
+                        GetPedHairRgbColor(i - 1)
+                    }
                 end),
                 makeupColors = table.fromLength(GetNumMakeupColors(), function(i)
-                    return {GetMakeupRgbColor(i - 1)}
+                    return {
+                        GetMakeupRgbColor(i - 1)
+                    }
                 end)
             })
         }, self.appearance:getUiConfig())
