@@ -294,7 +294,6 @@ function Appearance:get(ped)
 end
 
 function Appearance:set(appearance)
-
     SetModel(appearance.model, false)
     local ped = PlayerPedId()
     SetPedHeadBlendData(ped, table.unpack(appearance.headblend))

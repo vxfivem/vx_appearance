@@ -46,6 +46,8 @@ function Creator:start(config, callback)
 
     local ped = PlayerPedId()
     self.initialAppearance = self.appearance:get(ped)
+    self.initialPos = GetEntityCoords(ped)
+    self.initialHeading = GetEntityHeading(ped)
 
     SetModel(MP_MODELS.female)
     ped = PlayerPedId()
@@ -133,6 +135,11 @@ function Creator:stop(identity)
     self.callback(identity, currentAppearance)
     self.callback = nil
     self._isActive = false
+    DisplayRadar(true)
+    SetEntityCoords(ped, self.initialPos)
+    SetEntityHeading(ped, self.initialHeading)
+    self.initialHeading = nil
+    self.initialPos = nil
 end
 
 function Creator:isActive()
